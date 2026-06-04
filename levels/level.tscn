@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ucit0eywjewe"]
+
+[ext_resource type="PackedScene" uid="uid://b3enk33qlfdgt" path="res://entities/player/player.tscn" id="1_80vhd"]
+[ext_resource type="PackedScene" uid="uid://yk33jrpgcisv" path="res://entities/enemies/enemy.tscn" id="2_hjsbj"]
+[ext_resource type="Texture2D" uid="uid://d001sps0j3wc0" path="res://icon.svg" id="3_cwqvt"]
+
+[node name="World" type="Node2D" unique_id=1405360589]
+
+[node name="Sprite2D" parent="." unique_id=1282116693 instance=ExtResource("1_80vhd")]
+
+[node name="Enemy" parent="." unique_id=156458184 instance=ExtResource("2_hjsbj")]
+texture = ExtResource("3_cwqvt")

@@ -1,9 +1,13 @@
-[gd_scene format=3 uid="uid://dx8f0s4ad4w0"]
+[gd_scene format=3 uid="uid://b3enk33qlfdgt"]
 
-[ext_resource type="Script" uid="uid://dnhg8djx5jyk3" path="res://entities/player/player.gd" id="1_symyc"]
+[ext_resource type="Texture2D" uid="uid://dyho2ffdod0fb" path="res://entities/player/ship.png" id="1_abrql"]
+[ext_resource type="Script" uid="uid://cnajq557a66gm" path="res://entities/player/player.gd" id="2_abrql"]
 
-[node name="Player" type="Sprite2D" unique_id=794150342]
-visible = false
-script = ExtResource("1_symyc")
+[node name="Sprite2D" type="Sprite2D" unique_id=1282116693 groups=["player"]]
+texture = ExtResource("1_abrql")
+script = ExtResource("2_abrql")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1505290653]
+[node name="Timer" type="Timer" parent="." unique_id=1914003436]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
