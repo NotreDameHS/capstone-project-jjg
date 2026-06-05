@@ -1,6 +1,19 @@
 [gd_scene format=3 uid="uid://yk33jrpgcisv"]
 
 [ext_resource type="Script" uid="uid://bc7ele0dc6am" path="res://entities/enemies/enemy.gd" id="1_owq46"]
+[ext_resource type="Texture2D" uid="uid://d001sps0j3wc0" path="res://icon.svg" id="2_wqcwe"]
 
-[node name="Enemy" type="Sprite2D" unique_id=156458184]
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqcwe"]
+radius = 64.00781
+
+[node name="Enemy" type="CharacterBody2D" unique_id=990676591]
+collision_layer = 2
+collision_mask = 2
+motion_mode = 1
 script = ExtResource("1_owq46")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1414984875]
+texture = ExtResource("2_wqcwe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1218735071]
+shape = SubResource("CircleShape2D_wqcwe")
