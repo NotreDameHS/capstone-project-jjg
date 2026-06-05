@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b3enk33qlfdgt" path="res://entities/player/player.tscn" id="1_80vhd"]
 [ext_resource type="PackedScene" uid="uid://yk33jrpgcisv" path="res://entities/enemies/enemy.tscn" id="2_hjsbj"]
+[ext_resource type="PackedScene" uid="uid://cmmvudt2fo0b8" path="res://entities/collectibles/xp.tscn" id="3_cwqvt"]
 
 [node name="World" type="Node2D" unique_id=1405360589]
 
@@ -9,7 +10,7 @@
 position = Vector2(352, 343)
 
 [node name="Enemy" parent="." unique_id=156458184 instance=ExtResource("2_hjsbj")]
-position = Vector2(555, 336)
+position = Vector2(65, 131)
 
-[node name="Enemy2" parent="." unique_id=990676591 instance=ExtResource("2_hjsbj")]
-position = Vector2(139, 338)
+[node name="xp" parent="." unique_id=743479433 instance=ExtResource("3_cwqvt")]
+position = Vector2(623, 308)

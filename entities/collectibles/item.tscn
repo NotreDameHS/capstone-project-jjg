@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b3ua7j6ukae7j"]
+
+[ext_resource type="Script" uid="uid://do13kbssf7uom" path="res://entities/collectibles/item.gd" id="1_dsap4"]
+
+[node name="Item" type="Area2D" unique_id=743479433]
+collision_layer = 4
+script = ExtResource("1_dsap4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=175263476]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=407625299]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

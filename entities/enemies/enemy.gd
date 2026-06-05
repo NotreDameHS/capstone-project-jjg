@@ -15,3 +15,8 @@ func _physics_process(delta: float) -> void:
 	var direction: Vector2 = global_position.direction_to(player.global_position)
 	velocity = direction * speed
 	position += velocity * delta
+
+func _take_damage(amount: float) -> void:
+	health -= amount
+	if health <= 0:
+		queue_free()

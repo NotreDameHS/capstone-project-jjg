@@ -1,6 +1,7 @@
 extends CharacterBody2D
-
 var speed := 600.0
+
+### NOTES ###
 
 func _ready() -> void:
 	pass
@@ -9,6 +10,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var direction := Vector2(0,0)
+	var mouse_position := get_global_mouse_position()
 	direction.x = Input.get_axis("move_left", "move_right")
 	direction.y = Input.get_axis("move_up", "move_down")
 	 # Prevents increased movement when diagonally moving
@@ -16,8 +18,7 @@ func _process(delta: float) -> void:
 		direction = direction.normalized()
 	velocity = speed * direction
 	move_and_slide()
-	
-	
+
 		
 	#if Input.is_action_just_pressed("boost"):
 	#	max_speed = boost_speed
@@ -38,7 +39,12 @@ func _process(delta: float) -> void:
 #func _on_timer_timeout() -> void:
 #	max_speed = normal_speed
 
+func _xp_collect(amount: float) -> void:
+	pass
+	
 func _take_damage(damage: float) -> void:
 	# TAKE DAMAGE FROM ENEMIES
-	# Damage taken will be the same from all enemies, for simplicity sake
+	# Damage taken will be the same from all enemies, for simplicity sake. 
+	# There should be global immunity frames for the player, as to not instantly kill the player if they decide to run through a crowd.
+	
 	pass

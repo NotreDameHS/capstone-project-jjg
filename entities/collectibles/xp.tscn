@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cmmvudt2fo0b8"]
+
+[ext_resource type="PackedScene" uid="uid://b3ua7j6ukae7j" path="res://entities/collectibles/item.tscn" id="1_jqkjg"]
+[ext_resource type="Texture2D" uid="uid://cccdkc18wt1jx" path="res://entities/collectibles/star_gold.png" id="2_a8oi3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a8oi3"]
+radius = 16.03122
+
+[node name="xp" unique_id=743479433 instance=ExtResource("1_jqkjg")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=175263476]
+texture = ExtResource("2_a8oi3")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=407625299]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_a8oi3")
