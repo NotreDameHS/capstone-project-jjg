@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dx1kyuxdyybha"]
+
+[ext_resource type="PackedScene" uid="uid://b3ua7j6ukae7j" path="res://entities/collectibles/item.tscn" id="1_xab54"]
+[ext_resource type="Texture2D" uid="uid://b6atxjm7lwtu3" path="res://entities/collectibles/pill_red.png" id="2_bboee"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2cuk"]
+radius = 23.409399
+
+[node name="HealthPack" unique_id=743479433 instance=ExtResource("1_xab54")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=175263476]
+texture = ExtResource("2_bboee")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=407625299]
+shape = SubResource("CircleShape2D_v2cuk")

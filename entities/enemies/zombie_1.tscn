@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d4hbvl28ofxtc"]
+
+[ext_resource type="PackedScene" uid="uid://yk33jrpgcisv" path="res://entities/enemies/enemy.tscn" id="1_0qkhs"]
+[ext_resource type="Texture2D" uid="uid://dfetpbs2psydw" path="res://entities/enemies/mob3.png" id="2_3l024"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qkhs"]
+size = Vector2(34, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3l024"]
+size = Vector2(36, 62)
+
+[node name="Enemy_1" unique_id=990676591 instance=ExtResource("1_0qkhs")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1414984875]
+texture = ExtResource("2_3l024")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1218735071]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_0qkhs")
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1892919482) index="0" unique_id=345450353]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_3l024")

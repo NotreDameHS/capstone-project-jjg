@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bcn7ur20yl2e1"]
+
+[ext_resource type="PackedScene" uid="uid://yk33jrpgcisv" path="res://entities/enemies/enemy.tscn" id="1_hraih"]
+[ext_resource type="Texture2D" uid="uid://cr1ycafaags4i" path="res://entities/enemies/mob4.png" id="2_qg7nv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea3ra"]
+size = Vector2(86, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg7nv"]
+size = Vector2(89, 119)
+
+[node name="Boss" unique_id=990676591 instance=ExtResource("1_hraih")]
+health = 1000.0
+speed = 150.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1414984875]
+scale = Vector2(2, 2)
+texture = ExtResource("2_qg7nv")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1218735071]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ea3ra")
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(1892919482) index="0" unique_id=345450353]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_qg7nv")
