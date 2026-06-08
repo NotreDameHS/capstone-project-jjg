@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cgqqojafor6em"]
+
+[ext_resource type="Script" uid="uid://bycj05twyub1m" path="res://entities/player/projectiles/projectile.gd" id="1_w466p"]
+
+[node name="Projectile" type="Area2D" unique_id=1728525067]
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_w466p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=359994799]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=748737480]
+light_mask = 8
+visibility_layer = 2
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bnmqmpy2t2gjo"]
+
+[ext_resource type="PackedScene" uid="uid://cgqqojafor6em" path="res://entities/player/projectiles/projectile.tscn" id="1_bgrma"]
+[ext_resource type="Texture2D" uid="uid://drmjbiay7dh6h" path="res://entities/player/projectiles/bullet.png" id="2_2fd7c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m6fg0"]
+
+[node name="Bullet" unique_id=1728525067 instance=ExtResource("1_bgrma")]
+max_distance = 5000.0
+speed = 1000.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=359994799]
+texture = ExtResource("2_2fd7c")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=748737480]
+shape = SubResource("CircleShape2D_m6fg0")

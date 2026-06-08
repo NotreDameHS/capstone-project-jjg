@@ -1,16 +1,15 @@
 extends CharacterBody2D
 var speed := 600.0
-
+var health := 100.0
+@export var projectile_scene_1: PackedScene
 ### NOTES ###
 
 func _ready() -> void:
+#	set_health(health)
 	pass
-
-
-
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	look_at(get_global_mouse_position())
 	var direction := Vector2(0,0)
-	var mouse_position := get_global_mouse_position()
 	direction.x = Input.get_axis("move_left", "move_right")
 	direction.y = Input.get_axis("move_up", "move_down")
 	 # Prevents increased movement when diagonally moving
@@ -18,11 +17,8 @@ func _process(delta: float) -> void:
 		direction = direction.normalized()
 	velocity = speed * direction
 	move_and_slide()
-
-		
-	#if Input.is_action_just_pressed("boost"):
-	#	max_speed = boost_speed
-	#	get_node("Timer").start()
+	if Input.is_action_just_pressed("mouse_1"):
+		_shoot()
 	
 	# OLD movement!
 	# velocity = direction * max_speed
@@ -31,20 +27,18 @@ func _process(delta: float) -> void:
 	## Adds a fraction of the steering to the velocity
 	#velocity += steering_vector * steering_factor * delta
 	#position += velocity * delta
+
+#func set_health(amount: float):
+#	$UI/HealthBar.value = amount
 	
-	# Ensures direction is only changed when keys are being pressed
-	#if velocity.length() > 0.0:
-	#	rotation = velocity.angle()
-
-#func _on_timer_timeout() -> void:
-#	max_speed = normal_speed
-
+func _shoot() -> void:
+	var projectile = projectile_scene_1.instantiate()
+	get_tree().current_scene.add_child(projectile)
+	projectile.global_transform = global_transform
+	
 func _xp_collect(amount: float) -> void:
 	pass
-	
-func _take_damage(damage: float) -> void:
-	# TAKE DAMAGE FROM ENEMIES
-	# Damage taken will be the same from all enemies, for simplicity sake. 
-	# There should be global immunity frames for the player, as to not instantly kill the player if they decide to run through a crowd.
-	
+
+func _take_damage_(amount: float) -> void:
 	pass
+	# Game Manager will handle immunity frames	

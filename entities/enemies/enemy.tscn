@@ -4,7 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://d001sps0j3wc0" path="res://icon.svg" id="2_wqcwe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wqcwe"]
-radius = 64.00781
+radius = 61.008198
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5lf1o"]
+radius = 82.02438
 
 [node name="Enemy" type="CharacterBody2D" unique_id=990676591]
 collision_layer = 2
@@ -19,5 +22,7 @@ texture = ExtResource("2_wqcwe")
 shape = SubResource("CircleShape2D_wqcwe")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1892919482]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=345450353]
+shape = SubResource("CircleShape2D_5lf1o")

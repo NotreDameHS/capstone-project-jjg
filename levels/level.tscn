@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ucit0eywjewe"]
 
 [ext_resource type="PackedScene" uid="uid://b3enk33qlfdgt" path="res://entities/player/player.tscn" id="1_80vhd"]
-[ext_resource type="PackedScene" uid="uid://yk33jrpgcisv" path="res://entities/enemies/enemy.tscn" id="2_hjsbj"]
+[ext_resource type="PackedScene" uid="uid://yk33jrpgcisv" path="res://entities/enemies/enemy.tscn" id="3_5mrsh"]
 [ext_resource type="PackedScene" uid="uid://cmmvudt2fo0b8" path="res://entities/collectibles/xp.tscn" id="3_cwqvt"]
 
 [node name="World" type="Node2D" unique_id=1405360589]
@@ -9,8 +9,7 @@
 [node name="Sprite2D" parent="." unique_id=1282116693 instance=ExtResource("1_80vhd")]
 position = Vector2(352, 343)
 
-[node name="Enemy" parent="." unique_id=156458184 instance=ExtResource("2_hjsbj")]
-position = Vector2(65, 131)
-
 [node name="xp" parent="." unique_id=743479433 instance=ExtResource("3_cwqvt")]
 position = Vector2(623, 308)
+
+[node name="Enemy" parent="." unique_id=990676591 instance=ExtResource("3_5mrsh")]
