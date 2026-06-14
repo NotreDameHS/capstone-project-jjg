@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://bnmqmpy2t2gjo" path="res://entities/player/projectiles/bullet.tscn" id="2_sglur"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sglur"]
-radius = 44.102154
+radius = 48.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_abrql"]
 radius = 45.01111
 
 [node name="Player" type="CharacterBody2D" unique_id=1680448582 groups=["player"]]
-collision_mask = 4
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("2_abrql")
 projectile_scene_1 = ExtResource("2_sglur")
@@ -19,12 +19,10 @@ projectile_scene_1 = ExtResource("2_sglur")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1135690270]
 texture = ExtResource("1_abrql")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=599441695]
+[node name="HurtBox" type="Area2D" parent="." unique_id=599441695]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1307380872]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1307380872]
 shape = SubResource("CircleShape2D_sglur")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1882477514]
 shape = SubResource("CircleShape2D_abrql")
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

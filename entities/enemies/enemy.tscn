@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bc7ele0dc6am" path="res://entities/enemies/enemy.gd" id="1_owq46"]
 
-[node name="Enemy" type="CharacterBody2D" unique_id=990676591]
+[node name="Enemy" type="CharacterBody2D" unique_id=990676591 groups=["enemy"]]
 collision_layer = 2
 collision_mask = 2
 motion_mode = 1
@@ -12,7 +12,8 @@ script = ExtResource("1_owq46")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1218735071]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1892919482]
+[node name="Hitbox" type="Area2D" parent="." unique_id=229769292]
 collision_layer = 2
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=345450353]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=698992042]
